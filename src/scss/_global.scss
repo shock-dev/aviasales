@@ -16,6 +16,7 @@ body {
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
+  background-color: #F3F7FA;
 }
 
 h1,
@@ -43,4 +44,10 @@ a {
 
 img {
   max-width: 100%;
+}
+
+.container {
+  max-width: 784px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
