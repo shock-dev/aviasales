@@ -7,7 +7,7 @@ const filterList = [
     '1 пересадка',
     '2 пересадки',
     '3 пересадки'
-]
+];
 
 const Filters = () => {
     return (

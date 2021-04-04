@@ -1,3 +1,3 @@
 export interface CheckboxInterface {
-    name: string
+    name: string;
 }
