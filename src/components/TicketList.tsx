@@ -6,7 +6,14 @@ const TicketList = () => {
         <div className="tickets">
             <div className="tickets__list">
                 <Ticket />
+                <Ticket />
+                <Ticket />
+                <Ticket />
+                <Ticket />
             </div>
+            <button className="tickets__btn">
+                Показать еще 5 билетов!
+            </button>
         </div>
     );
 };

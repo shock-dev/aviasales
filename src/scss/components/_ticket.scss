@@ -55,4 +55,25 @@
 
   }
 
+  &__btn {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #2196F3;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background-color .2s;
+    outline: none;
+
+    &:hover {
+      background-color: #1586e0;
+    }
+
+  }
+
 }
