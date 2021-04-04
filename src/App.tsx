@@ -1,12 +1,18 @@
 import React from 'react';
 import Logo from './components/Logo';
 import Filters from './components/Filters';
+import Tabs from './components/Tabs';
 
 const App = () => {
     return (
-        <div className="container">
+        <div className="app">
             <Logo />
-            <Filters/>
+            <div className="container main">
+                <Filters/>
+                <div className="main__inner">
+                    <Tabs />
+                </div>
+            </div>
         </div>
     );
 };

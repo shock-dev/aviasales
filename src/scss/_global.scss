@@ -52,3 +52,12 @@ img {
   padding: 0 15px;
   margin: 0 auto;
 }
+
+.main {
+  display: flex;
+  align-items: flex-start;
+
+  &__inner {
+    width: 100%;
+  }
+}
