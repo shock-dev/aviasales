@@ -5,7 +5,7 @@ const tabs = [
     'Самый дешевый',
     'Самый быстрый',
     'Оптимальный'
-]
+];
 
 const Tabs = () => {
     const [activeTab, setActiveTab] = useState<number>(0);

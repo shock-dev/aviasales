@@ -1,5 +1,8 @@
 import React from 'react';
-import { CheckboxInterface } from '../types/checkbox';
+
+interface CheckboxInterface {
+    readonly name: string
+}
 
 const Checkbox = ({ name }: CheckboxInterface) => {
     return (
