@@ -16,8 +16,11 @@ const Filters = () => {
                 Количество пересадок
             </h3>
             <ul className="filters__list">
-                {filterList.map(name =>
-                    <li className="filters__item">
+                {filterList.map((name, index) =>
+                    <li
+                        key={index}
+                        className="filters__item"
+                    >
                         <Checkbox name={name} />
                     </li>
                 )}

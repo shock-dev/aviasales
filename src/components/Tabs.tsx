@@ -20,6 +20,7 @@ const Tabs = () => {
         <div className="tabs">
             {tabs.map((name, index) =>
                 <div
+                    key={index}
                     className={classNames('tabs__item', { active: activeTab === index })}
                     onClick={clickTabHandler.bind(null, index)}
                 >
