@@ -1,4 +1,4 @@
-export interface Ticket {
+export interface TicketInterface {
     price: number
     carrier: string
     segments: [
@@ -27,7 +27,7 @@ export enum TicketsActionTypes {
 
 export interface TicketsState {
     readonly loading: boolean
-    readonly data: Ticket[]
+    readonly data: TicketInterface[]
     readonly errors?: string
 }
 
@@ -38,7 +38,7 @@ interface FetchRequestAction {
 
 interface FetchSuccessAction {
     type: TicketsActionTypes.FETCH_SUCCESS
-    payload: Ticket[]
+    payload: TicketInterface[]
 }
 
 interface FetchErrorAction {

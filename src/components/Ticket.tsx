@@ -1,15 +1,14 @@
 import React from 'react';
-import ticketImg from '../assets/img/ticket-img.png'
 
-const Ticket = () => {
+const Ticket = ({ carrier, price }: any) => {
     return (
         <div className="tickets__item ticket">
             <div className="ticket__head">
                 <div className="ticket__price">
-                    13 400 Р
+                    {price} Р
                 </div>
                 <div className="ticket__img">
-                    <img src={ticketImg} alt="Ticket" />
+                    <img src={`http://pics.avs.io/99/36/${carrier}.png`} alt={`${carrier} ticket`} />
                 </div>
             </div>
             <div className="ticket__info info">

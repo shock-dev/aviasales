@@ -1,10 +1,11 @@
-import { Ticket, TicketsActionTypes } from './types';
+import { TicketInterface, TicketsActionTypes } from './types';
 import axios from 'axios';
 
-export const fetchTickets = () => async (dispatch: any) => {
+export const fetchTickets = () => async (dispatch: any): Promise<void> => {
     try {
         dispatch(fetchRequest());
-        const { data: { tickets } } = await axios.get('https://front-test.beta.aviasales.ru/tickets?searchId=412f9');
+        const { data: { searchId } } = await axios.get(`https://front-test.beta.aviasales.ru/search`);
+        const { data: { tickets } } = await axios.get(`https://front-test.beta.aviasales.ru/tickets?searchId=${searchId}`);
         dispatch(fetchSuccess(tickets));
     } catch (e) {
         dispatch(fetchError('Something went wrong'));
@@ -15,7 +16,7 @@ export const fetchRequest = () => ({
     type: TicketsActionTypes.FETCH_REQUEST
 });
 
-export const fetchSuccess = (data: Ticket[]) => ({
+export const fetchSuccess = (data: TicketInterface[]) => ({
     type: TicketsActionTypes.FETCH_SUCCESS,
     payload: data
 });
