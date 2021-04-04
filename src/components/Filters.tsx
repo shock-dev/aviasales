@@ -1,5 +1,8 @@
 import React from 'react';
 import Checkbox from './Checkbox';
+import { useSelector } from 'react-redux';
+import { ApplicationState } from '../store';
+import classNames from 'classnames';
 
 const filterList = [
     'Все',
@@ -10,6 +13,8 @@ const filterList = [
 ];
 
 const Filters = () => {
+    const { loading }: any = useSelector<ApplicationState>(state => state.tickets);
+
     return (
         <div className="filters">
             <h3 className="filters__head">
@@ -19,9 +24,12 @@ const Filters = () => {
                 {filterList.map((name, index) =>
                     <li
                         key={index}
-                        className="filters__item"
+                        className={classNames('filters__item', { disabled: loading })}
                     >
-                        <Checkbox name={name} />
+                        <Checkbox
+                            name={name}
+                            loading={loading}
+                        />
                     </li>
                 )}
             </ul>

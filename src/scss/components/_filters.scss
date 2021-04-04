@@ -18,6 +18,11 @@
     padding: 0 $filter-padding;
   }
 
+  &__item.disabled {
+    opacity: .6;
+    cursor: default;
+  }
+
   .checkbox {
     display: flex;
     align-items: center;
