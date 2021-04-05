@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Ticket from './Ticket';
 import { useSelector } from 'react-redux';
 import { ApplicationState } from '../store';
 import { TicketInterface } from '../store/tickets/types';
 import Loader from './Loader';
+import Error from './Error';
+import declension from '../utils/declension';
 
 const TicketList = () => {
-    const { loading, data }: any = useSelector<ApplicationState>(state => state.tickets);
+    const { loading, errors, data }: any = useSelector<ApplicationState>(state => state.tickets);
+    const step = 5;
+    const [availableCount, setAvailableCount] = useState<number>(5);
+    const filteredTickets = [...data].slice(0, availableCount);
+
+    const clickBtnHandler = () => {
+        setAvailableCount(state => state + step);
+    };
+
+    const generateBtnText = () => {
+        return `Показать еще ${step} ${declension(step, ['билет', 'билета', 'билетов'])}!`;
+    };
+
+    if (errors) {
+        return (
+            <Error message={errors} />
+        );
+    }
 
     if (loading) {
         return (
@@ -17,15 +36,18 @@ const TicketList = () => {
     return (
         <div className="tickets">
             <div className="tickets__list">
-                {data.map((ticket: TicketInterface, index: number) =>
+                {filteredTickets.map((ticket: TicketInterface, index: number) =>
                     <Ticket
                         key={index}
                         {...ticket}
                     />
                 )}
             </div>
-            <button className="tickets__btn">
-                Показать еще 5 билетов!
+            <button
+                className="tickets__btn"
+                onClick={clickBtnHandler}
+            >
+                {generateBtnText()}
             </button>
         </div>
     );
