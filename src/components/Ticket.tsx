@@ -19,6 +19,10 @@ interface TicketProps {
 const Ticket = ({ price, carrier, segments }: TicketProps) => {
 
     const getCountOfStops = (count: number) => {
+        if (count === 0) {
+            return 'Без пересадок';
+        }
+
         return count + ' ' + declension(count, ['пересадка', 'пересадки', 'пересадок']);
     };
 
