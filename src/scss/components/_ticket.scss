@@ -41,7 +41,7 @@
     }
 
     &__col {
-      flex: 1 0 auto;
+      width: calc(100% / 3);
 
       &-head {
         font-size: 12px;
