@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchTickets } from './store/tickets/actions';
 import { ApplicationState } from './store';
 import { tabs } from './resources/tabs';
+import { filters } from './resources/filters';
 import { setSortBy } from './store/filters/actions';
 import sorting from './utils/sorting';
 
@@ -27,7 +28,7 @@ const App = () => {
         <div className="app">
             <Logo />
             <div className="container main">
-                <Filters/>
+                <Filters data={filters} />
                 <div className="main__inner">
                     <Tabs
                         data={tabs}
