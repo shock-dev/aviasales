@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import Ticket from './Ticket';
-import { useSelector } from 'react-redux';
-import { ApplicationState } from '../store';
 import { TicketInterface } from '../store/tickets/types';
 import Loader from './Loader';
 import Error from './Error';
 import declension from '../utils/declension';
 
-const TicketList = () => {
-    const { loading, errors, data }: any = useSelector<ApplicationState>(state => state.tickets);
+interface TicketListProps {
+    readonly data: TicketInterface[]
+    readonly loading: boolean
+    readonly errors?: string
+}
+
+const TicketList = ({ data, loading, errors }: TicketListProps) => {
     const step = 5;
     const [availableCount, setAvailableCount] = useState<number>(5);
     const filteredTickets = [...data].slice(0, availableCount);
