@@ -7,10 +7,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchTickets } from './store/tickets/actions';
 import { ApplicationState } from './store';
 import { tabs } from './resources/tabs';
+import { setSortBy } from './store/filters/actions';
+import sorting from './utils/sorting';
 
 const App = () => {
     const dispatch = useDispatch();
     const { loading, errors, data }: any = useSelector<ApplicationState>(state => state.tickets);
+    const { sortBy }: any = useSelector<ApplicationState>(state => state.filters);
+
+    const clickTabHandler = (val: string) => {
+        dispatch(setSortBy(val));
+    };
 
     useEffect(() => {
         dispatch(fetchTickets());
@@ -22,10 +29,14 @@ const App = () => {
             <div className="container main">
                 <Filters/>
                 <div className="main__inner">
-                    <Tabs data={tabs} />
+                    <Tabs
+                        data={tabs}
+                        activeTab={sortBy}
+                        onClickTab={clickTabHandler}
+                    />
                     <TicketList
                         loading={loading}
-                        data={data}
+                        data={sorting(data, sortBy)}
                         errors={errors}
                     />
                 </div>

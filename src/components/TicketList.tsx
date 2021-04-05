@@ -14,7 +14,7 @@ interface TicketListProps {
 const TicketList = ({ data, loading, errors }: TicketListProps) => {
     const step = 5;
     const [availableCount, setAvailableCount] = useState<number>(5);
-    const filteredTickets = [...data].slice(0, availableCount);
+    const slicedTickets = [...data].slice(0, availableCount);
 
     const clickBtnHandler = () => {
         setAvailableCount(state => state + step);
@@ -39,7 +39,7 @@ const TicketList = ({ data, loading, errors }: TicketListProps) => {
     return (
         <div className="tickets">
             <div className="tickets__list">
-                {filteredTickets.map((ticket: TicketInterface, index: number) =>
+                {slicedTickets.map((ticket: TicketInterface, index: number) =>
                     <Ticket
                         key={index}
                         {...ticket}
