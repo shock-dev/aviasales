@@ -1,14 +1,16 @@
 import { TicketInterface, TicketsActionTypes } from './types';
 import axios from 'axios';
 
+const API = 'https://front-test.beta.aviasales.ru'
+
 export const fetchTickets = () => async (dispatch: any): Promise<void> => {
     try {
         dispatch(fetchRequest());
-        const { data: { searchId } } = await axios.get(`https://front-test.beta.aviasales.ru/search`);
-        const { data: { tickets } } = await axios.get(`https://front-test.beta.aviasales.ru/tickets?searchId=${searchId}`);
+        const { data: { searchId } } = await axios.get(`${API}/search`);
+        const { data: { tickets } } = await axios.get(`${API}/tickets?searchId=${searchId}`);
         dispatch(fetchSuccess(tickets));
     } catch (e) {
-        dispatch(fetchError('Something went wrong'));
+        dispatch(fetchError('Что-то пошло не так.'));
     }
 };
 
@@ -23,5 +25,5 @@ export const fetchSuccess = (data: TicketInterface[]) => ({
 
 export const fetchError = (message: string) => ({
     type: TicketsActionTypes.FETCH_ERROR,
-    errors: message
+    payload: message
 });

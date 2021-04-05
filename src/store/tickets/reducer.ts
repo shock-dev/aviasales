@@ -9,7 +9,7 @@ const initialState: TicketsState = {
 const tickets = (state = initialState, action: TicketsAction): TicketsState => {
     switch (action.type) {
         case TicketsActionTypes.FETCH_REQUEST:
-            return { ...state, loading: true };
+            return { ...state, loading: true, errors: undefined, data: [] };
         case TicketsActionTypes.FETCH_SUCCESS:
             return { ...state, loading: false, data: action.payload };
         case TicketsActionTypes.FETCH_ERROR:
