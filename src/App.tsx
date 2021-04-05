@@ -6,6 +6,7 @@ import TicketList from './components/TicketList';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTickets } from './store/tickets/actions';
 import { ApplicationState } from './store';
+import { tabs } from './resources/tabs';
 
 const App = () => {
     const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const App = () => {
             <div className="container main">
                 <Filters/>
                 <div className="main__inner">
-                    <Tabs />
+                    <Tabs data={tabs} />
                     <TicketList
                         loading={loading}
                         data={data}
