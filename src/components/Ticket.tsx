@@ -1,6 +1,27 @@
 import React from 'react';
+import declension from '../utils/declension';
+import { departureTime, destinationTime, travelTime } from '../utils/date';
 
-const Ticket = ({ carrier, price }: any) => {
+interface SegmentInterface {
+    origin: string
+    destination: string
+    date: string
+    stops: string[],
+    duration: number
+}
+
+interface TicketProps {
+    price: number
+    carrier: string
+    segments: SegmentInterface[]
+}
+
+const Ticket = ({ price, carrier, segments }: TicketProps) => {
+
+    const getCountOfStops = (count: number) => {
+        return count + ' ' + declension(count, ['пересадка', 'пересадки', 'пересадок']);
+    };
+
     return (
         <div className="tickets__item ticket">
             <div className="ticket__head">
@@ -12,58 +33,34 @@ const Ticket = ({ carrier, price }: any) => {
                 </div>
             </div>
             <div className="ticket__info info">
-                <div className="ticket__info-row info__row">
-                    <div className="info__col">
-                        <div className="info__col-head">
-                            MOW – HKT
+                {segments.map(({ origin, destination, stops, date, duration }, index) =>
+                    <div className="ticket__info-row info__row" key={index}>
+                        <div className="info__col">
+                            <div className="info__col-head">
+                                {origin} – {destination}
+                            </div>
+                            <div className="info__col-val">
+                                {departureTime(date)} – {destinationTime(date, duration)}
+                            </div>
                         </div>
-                        <div className="info__col-val">
-                            10:45 – 08:00
+                        <div className="info__col">
+                            <div className="info__col-head">
+                                В пути
+                            </div>
+                            <div className="info__col-val">
+                                {travelTime(duration)}
+                            </div>
                         </div>
-                    </div>
-                    <div className="info__col">
-                        <div className="info__col-head">
-                            MOW – HKT
-                        </div>
-                        <div className="info__col-val">
-                            10:45 – 08:00
-                        </div>
-                    </div>
-                    <div className="info__col">
-                        <div className="info__col-head">
-                            MOW – HKT
-                        </div>
-                        <div className="info__col-val">
-                            10:45 – 08:00
-                        </div>
-                    </div>
-                </div>
-                <div className="ticket__info-row info__row">
-                    <div className="info__col">
-                        <div className="info__col-head">
-                            MOW – HKT
-                        </div>
-                        <div className="info__col-val">
-                            10:45 – 08:00
+                        <div className="info__col">
+                            <div className="info__col-head">
+                                {getCountOfStops(stops.length)}
+                            </div>
+                            <div className="info__col-val">
+                                {stops.length ? stops.join(', ') : null}
+                            </div>
                         </div>
                     </div>
-                    <div className="info__col">
-                        <div className="info__col-head">
-                            MOW – HKT
-                        </div>
-                        <div className="info__col-val">
-                            10:45 – 08:00
-                        </div>
-                    </div>
-                    <div className="info__col">
-                        <div className="info__col-head">
-                            MOW – HKT
-                        </div>
-                        <div className="info__col-val">
-                            10:45 – 08:00
-                        </div>
-                    </div>
-                </div>
+                )}
             </div>
         </div>
     );
