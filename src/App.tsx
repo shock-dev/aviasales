@@ -22,11 +22,7 @@ const App = () => {
         <Filters data={filters} />
         <div className="main__inner">
           <Tabs data={tabs} />
-          <TicketList
-            loading={false}
-            data={[]}
-            error="Что-то пошло не так"
-          />
+          <TicketList />
         </div>
       </div>
     </div>

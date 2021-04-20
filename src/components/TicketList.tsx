@@ -2,30 +2,29 @@ import React, { useState } from 'react';
 import Ticket from './Ticket';
 import Loader from './Loader';
 import Error from './Error';
+import { useSelector } from 'react-redux';
+import { selectErrorTickets, selectIsLoadingTickets, selectTicketsItems } from '../store/tickets/selectors';
 import declension from '../utils/declension';
 
-interface TicketListProps {
-  readonly data: any
-  readonly loading: boolean
-  readonly error?: string
-}
-
-const TicketList = ({ data, loading, error }: TicketListProps) => {
+const TicketList = () => {
+  const error = useSelector(selectErrorTickets);
+  const loading = useSelector(selectIsLoadingTickets);
+  const tickets = useSelector(selectTicketsItems);
   const step = 5;
-  const [availableCount, setAvailableCount] = useState(5);
-  const slicedTickets = [...data].slice(0, availableCount);
-
-  const clickBtnHandler = () => {
-    setAvailableCount((state) => state + step);
-  };
+  const [availableTickets, setAvailableTickets] = useState(step);
+  const data = [...tickets].splice(0, availableTickets);
 
   const generateBtnText = () => {
     return `Показать еще ${step} ${declension(step, ['билет', 'билета', 'билетов'])}!`;
   };
 
+  const clickBtnHandler = () => {
+    setAvailableTickets((state) => state + step);
+  };
+
   if (error) {
     return (
-      <Error message={error} />
+      <Error />
     );
   }
 
@@ -38,7 +37,7 @@ const TicketList = ({ data, loading, error }: TicketListProps) => {
   return (
     <div className="tickets">
       <div className="tickets__list">
-        {slicedTickets.map((ticket, index: number) =>
+        {data.map((ticket, index) =>
           <Ticket
             key={index}
             {...ticket}
