@@ -4,7 +4,7 @@ interface ErrorProps {
   message: string
 }
 
-const Error = ({message}: ErrorProps) => {
+const Error = ({ message }: ErrorProps) => {
   return (
     <div className="error">
       <p className="error__text">{message}</p>

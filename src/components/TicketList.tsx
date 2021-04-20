@@ -10,13 +10,13 @@ interface TicketListProps {
   readonly error?: string
 }
 
-const TicketList = ({data, loading, error}: TicketListProps) => {
+const TicketList = ({ data, loading, error }: TicketListProps) => {
   const step = 5;
   const [availableCount, setAvailableCount] = useState(5);
   const slicedTickets = [...data].slice(0, availableCount);
 
   const clickBtnHandler = () => {
-    setAvailableCount(state => state + step);
+    setAvailableCount((state) => state + step);
   };
 
   const generateBtnText = () => {

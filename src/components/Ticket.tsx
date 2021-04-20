@@ -16,8 +16,7 @@ interface TicketProps {
   segments: SegmentInterface[]
 }
 
-const Ticket = ({price, carrier, segments}: TicketProps) => {
-
+const Ticket = ({ price, carrier, segments }: TicketProps) => {
   const getCountOfStops = (count: number) => {
     if (count === 0) {
       return 'Без пересадок';
@@ -33,11 +32,11 @@ const Ticket = ({price, carrier, segments}: TicketProps) => {
           {price} Р
         </div>
         <div className="ticket__img">
-          <img src={`http://pics.avs.io/99/36/${carrier}.png`} alt={`${carrier} ticket`} />
+          <img src={`https://pics.avs.io/99/36/${carrier}.png`} alt={`${carrier} ticket`} />
         </div>
       </div>
       <div className="ticket__info info">
-        {segments.map(({origin, destination, stops, date, duration}, index) =>
+        {segments.map(({ origin, destination, stops, date, duration }, index) =>
           <div className="ticket__info-row info__row" key={index}>
             <div className="info__col">
               <div className="info__col-head">

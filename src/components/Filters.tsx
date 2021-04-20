@@ -6,7 +6,7 @@ interface FiltersProps {
   readonly data: FilterDataInterface[]
 }
 
-const Filters = ({data}: FiltersProps) => {
+const Filters = ({ data }: FiltersProps) => {
   const [filters] = useState<FilterDataInterface[]>(data);
 
   return (
