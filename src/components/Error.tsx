@@ -1,14 +1,18 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchTickets } from '../store/tickets/actions';
 
-interface ErrorProps {
-  message: string
-}
+const Error = () => {
+  const dispatch = useDispatch();
 
-const Error = ({ message }: ErrorProps) => {
+  const clickBtnHandler = () => {
+    dispatch(fetchTickets());
+  };
+
   return (
     <div className="error">
-      <p className="error__text">{message}</p>
-      <button className="error__btn">Попробовать снова</button>
+      <p className="error__text">Что-то пошло не так</p>
+      <button className="error__btn" onClick={clickBtnHandler}>Попробовать снова</button>
     </div>
   );
 };
