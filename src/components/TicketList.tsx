@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import Ticket from './Ticket';
-import { TicketInterface } from '../store/tickets/types';
 import Loader from './Loader';
 import Error from './Error';
 import declension from '../utils/declension';
 
 interface TicketListProps {
-    readonly data: TicketInterface[]
+    readonly data: any
     readonly loading: boolean
-    readonly errors?: string
+    readonly error?: string
 }
 
-const TicketList = ({ data, loading, errors }: TicketListProps) => {
+const TicketList = ({ data, loading, error }: TicketListProps) => {
     const step = 5;
-    const [availableCount, setAvailableCount] = useState<number>(5);
+    const [availableCount, setAvailableCount] = useState(5);
     const slicedTickets = [...data].slice(0, availableCount);
 
     const clickBtnHandler = () => {
@@ -24,9 +23,9 @@ const TicketList = ({ data, loading, errors }: TicketListProps) => {
         return `Показать еще ${step} ${declension(step, ['билет', 'билета', 'билетов'])}!`;
     };
 
-    if (errors) {
+    if (error) {
         return (
-            <Error message={errors} />
+            <Error message={error} />
         );
     }
 
@@ -39,7 +38,7 @@ const TicketList = ({ data, loading, errors }: TicketListProps) => {
     return (
         <div className="tickets">
             <div className="tickets__list">
-                {slicedTickets.map((ticket: TicketInterface, index: number) =>
+                {slicedTickets.map((ticket, index: number) =>
                     <Ticket
                         key={index}
                         {...ticket}
