@@ -4,13 +4,14 @@ import { LoadingStatus } from '../types';
 import { TicketsActionType } from './types/actions';
 
 const initialTicketsState: TicketsState = {
-  items: undefined,
+  items: [],
   loadingStatus: LoadingStatus.NEVER
 };
 
 const tickets = produce((draft, action: any) => {
   switch (action.type) {
     case TicketsActionType.FETCH_ITEMS:
+      draft.items = [];
       draft.loadingStatus = LoadingStatus.LOADING;
       break;
 

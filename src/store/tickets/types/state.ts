@@ -22,6 +22,6 @@ export interface ITicket {
 }
 
 export interface TicketsState {
-  items?: ITicket[]
+  items: ITicket[]
   loadingStatus: LoadingStatus
 }
