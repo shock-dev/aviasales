@@ -8,9 +8,9 @@ interface CheckboxInterface {
   readonly loading: boolean
 }
 
-const Checkbox = ({name, checked, loading}: CheckboxInterface) => {
+const Checkbox = ({ name, checked, loading }: CheckboxInterface) => {
   return (
-    <li className={classNames('filters__item', {disabled: loading})}>
+    <li className={classNames('filters__item', { disabled: loading })}>
       <label className="filters__item-label checkbox">
         <input
           className="checkbox__real"
@@ -20,8 +20,8 @@ const Checkbox = ({name, checked, loading}: CheckboxInterface) => {
         />
         <span className="checkbox__fake" />
         <span className="checkbox__text">
-                    {name}
-                </span>
+          {name}
+        </span>
       </label>
     </li>
   );

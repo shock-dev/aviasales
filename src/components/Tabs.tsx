@@ -6,10 +6,10 @@ interface TabsProps {
   readonly data: TabInterface[]
 }
 
-const Tabs = ({data}: TabsProps) => {
+const Tabs = ({ data }: TabsProps) => {
   return (
     <div className="tabs">
-      {data.map(({id, name, val}) =>
+      {data.map(({ id, name }) =>
         <div
           key={id}
           className={classNames('tabs__item')}
