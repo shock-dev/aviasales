@@ -1,4 +1,5 @@
 import { TicketsState } from './tickets/types/state';
+import { FiltersState } from './filters/types/state';
 
 export enum LoadingStatus {
   NEVER = 'NEVER',
@@ -9,4 +10,5 @@ export enum LoadingStatus {
 
 export interface RootState {
   tickets: TicketsState
+  filters: FiltersState
 }
