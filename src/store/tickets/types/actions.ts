@@ -21,3 +21,8 @@ export interface SetTicketsLoadingStatusAction extends Action {
   type: TicketsActionType.SET_LOADING_STATUS,
   payload: LoadingStatus
 }
+
+export type TicketsAction =
+  | FetchTicketsAction
+  | SetTicketsAction
+  | SetTicketsLoadingStatusAction
