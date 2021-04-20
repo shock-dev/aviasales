@@ -1,24 +1,24 @@
-const TotalDuration = (segment: any): number => {
+import { ITicket } from '../store/tickets/types/state';
+
+const totalDuration = (segment: ITicket['segments']): number => {
   return segment[0].duration + segment[1].duration;
 };
 
-const TotalStops = (segment: any): number => {
+const totalStops = (segment: ITicket['segments']): number => {
   return segment[0].stops.length + segment[1].stops.length;
 };
 
-const sorting = (items: any, sortBy: string) => {
+const sorting = (items: ITicket[], sortBy: string) => {
   if (sortBy === 'cheap') {
-    return items.sort((a: any, b: any) => a.price - b.price);
+    return items.slice().sort((a, b) => +a.price - +b.price);
   }
 
   if (sortBy === 'fast') {
-    // eslint-disable-next-line new-cap
-    return items.sort((a: any, b: any) => TotalDuration(a.segments) - TotalDuration(b.segments));
+    return items.slice().sort((a, b) => totalDuration(a.segments) - totalDuration(b.segments));
   }
 
   if (sortBy === 'optimal') {
-    // eslint-disable-next-line new-cap
-    return items.sort((a: any, b: any) => TotalStops(a.segments) - TotalStops(b.segments));
+    return items.slice().sort((a, b) => totalStops(a.segments) - totalStops(b.segments));
   }
 
   return items;
