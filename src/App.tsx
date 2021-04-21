@@ -11,6 +11,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    document.title = 'Aviasales';
     dispatch(fetchTickets());
   }, []);
 
