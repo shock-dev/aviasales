@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/aviasales-react-typescript/static/css/main.4e1c5eda.chunk.css",
+    "main.js": "/aviasales-react-typescript/static/js/main.b22ac030.chunk.js",
+    "main.js.map": "/aviasales-react-typescript/static/js/main.b22ac030.chunk.js.map",
+    "runtime-main.js": "/aviasales-react-typescript/static/js/runtime-main.a21fd294.js",
+    "runtime-main.js.map": "/aviasales-react-typescript/static/js/runtime-main.a21fd294.js.map",
+    "static/js/2.ab9b1a1a.chunk.js": "/aviasales-react-typescript/static/js/2.ab9b1a1a.chunk.js",
+    "static/js/2.ab9b1a1a.chunk.js.map": "/aviasales-react-typescript/static/js/2.ab9b1a1a.chunk.js.map",
+    "index.html": "/aviasales-react-typescript/index.html",
+    "static/css/main.4e1c5eda.chunk.css.map": "/aviasales-react-typescript/static/css/main.4e1c5eda.chunk.css.map",
+    "static/js/2.ab9b1a1a.chunk.js.LICENSE.txt": "/aviasales-react-typescript/static/js/2.ab9b1a1a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a21fd294.js",
+    "static/js/2.ab9b1a1a.chunk.js",
+    "static/css/main.4e1c5eda.chunk.css",
+    "static/js/main.b22ac030.chunk.js"
+  ]
+}
