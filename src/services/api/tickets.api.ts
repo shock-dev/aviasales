@@ -1,9 +1,11 @@
 import axios from 'axios';
 
+const API = 'https://front-test.beta.aviasales.ru';
+
 class TicketsApi {
   getKey = async () => {
     try {
-      const { data: { searchId } } = await axios.get('/search');
+      const { data: { searchId } } = await axios.get(`${API}/search`);
       return searchId;
     } catch (e) {
       throw e;
@@ -12,7 +14,7 @@ class TicketsApi {
 
   getTicketsByKey = async (key: string) => {
     try {
-      const { data: { tickets } } = await axios.get(`/tickets?searchId=${key}`);
+      const { data: { tickets } } = await axios.get(`${API}/tickets?searchId=${key}`);
       return tickets;
     } catch (e) {
       throw e;
