@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/aviasales-react-typescript/static/css/main.7fc1c09a.chunk.css",
-    "main.js": "/aviasales-react-typescript/static/js/main.6e974061.chunk.js",
-    "main.js.map": "/aviasales-react-typescript/static/js/main.6e974061.chunk.js.map",
+    "main.js": "/aviasales-react-typescript/static/js/main.825ed684.chunk.js",
+    "main.js.map": "/aviasales-react-typescript/static/js/main.825ed684.chunk.js.map",
     "runtime-main.js": "/aviasales-react-typescript/static/js/runtime-main.c621a0eb.js",
     "runtime-main.js.map": "/aviasales-react-typescript/static/js/runtime-main.c621a0eb.js.map",
     "static/js/2.7356ac0d.chunk.js": "/aviasales-react-typescript/static/js/2.7356ac0d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.c621a0eb.js",
     "static/js/2.7356ac0d.chunk.js",
     "static/css/main.7fc1c09a.chunk.css",
-    "static/js/main.6e974061.chunk.js"
+    "static/js/main.825ed684.chunk.js"
   ]
 }
