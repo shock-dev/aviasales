@@ -11,7 +11,7 @@ export interface SetSortByAction {
 
 export interface SetFilterAction {
   type: FiltersActionTypes.SET_FILTER
-  payload: string
+  payload: string[]
 }
 
 export interface ClearFilterAction {

@@ -4,7 +4,6 @@ import Filters from './components/Filters';
 import Tabs from './components/Tabs';
 import TicketList from './components/TicketList';
 import { tabs } from './resources/tabs';
-import { filters } from './resources/filters';
 import { useDispatch } from 'react-redux';
 import { fetchTickets } from './store/tickets/actions';
 
@@ -19,7 +18,7 @@ const App = () => {
     <div className="app">
       <Logo />
       <div className="container main">
-        <Filters data={filters} />
+        <Filters />
         <div className="main__inner">
           <Tabs data={tabs} />
           <TicketList />
