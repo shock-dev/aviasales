@@ -14,11 +14,11 @@ const filters = produce((draft, action: FiltersAction) => {
       break;
 
     case FiltersActionTypes.SET_FILTER:
-      draft.filters.push(action.payload);
+      draft.filters = action.payload;
       break;
 
     case FiltersActionTypes.CLEAR_FILTER:
-      draft.filters.splice(draft.filters.indexOf(action.payload), 1);
+      draft.filters = ['all'];
       break;
 
     default:
