@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import Checkbox from './Checkbox';
 import { FilterDataInterface } from '../resources/filters';
+import { useSelector } from 'react-redux';
+import { selectIsLoadingTickets } from '../store/tickets/selectors';
 
 interface FiltersProps {
   readonly data: FilterDataInterface[]
 }
 
 const Filters = ({ data }: FiltersProps) => {
+  const isLoading = useSelector(selectIsLoadingTickets);
   const [filters] = useState<FilterDataInterface[]>(data);
 
   return (
@@ -18,7 +21,7 @@ const Filters = ({ data }: FiltersProps) => {
         {filters.map((item) =>
           <Checkbox
             key={item.id}
-            loading={false}
+            loading={isLoading}
             {...item}
           />
         )}
