@@ -13,6 +13,14 @@ const filters = produce((draft, action: FiltersAction) => {
       draft.sortBy = action.payload;
       break;
 
+    case FiltersActionTypes.SET_FILTER:
+      draft.filters.push(action.payload);
+      break;
+
+    case FiltersActionTypes.CLEAR_FILTER:
+      draft.filters.splice(draft.filters.indexOf(action.payload), 1);
+      break;
+
     default:
       break;
   }
