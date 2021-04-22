@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/aviasales-react-typescript/static/css/main.7fc1c09a.chunk.css",
-    "main.js": "/aviasales-react-typescript/static/js/main.825ed684.chunk.js",
-    "main.js.map": "/aviasales-react-typescript/static/js/main.825ed684.chunk.js.map",
-    "runtime-main.js": "/aviasales-react-typescript/static/js/runtime-main.c621a0eb.js",
-    "runtime-main.js.map": "/aviasales-react-typescript/static/js/runtime-main.c621a0eb.js.map",
-    "static/js/2.7356ac0d.chunk.js": "/aviasales-react-typescript/static/js/2.7356ac0d.chunk.js",
-    "static/js/2.7356ac0d.chunk.js.map": "/aviasales-react-typescript/static/js/2.7356ac0d.chunk.js.map",
-    "index.html": "/aviasales-react-typescript/index.html",
-    "static/css/main.7fc1c09a.chunk.css.map": "/aviasales-react-typescript/static/css/main.7fc1c09a.chunk.css.map",
-    "static/js/2.7356ac0d.chunk.js.LICENSE.txt": "/aviasales-react-typescript/static/js/2.7356ac0d.chunk.js.LICENSE.txt"
+    "main.css": "/aviasales/static/css/main.7fc1c09a.chunk.css",
+    "main.js": "/aviasales/static/js/main.6656c36b.chunk.js",
+    "main.js.map": "/aviasales/static/js/main.6656c36b.chunk.js.map",
+    "runtime-main.js": "/aviasales/static/js/runtime-main.57faaa61.js",
+    "runtime-main.js.map": "/aviasales/static/js/runtime-main.57faaa61.js.map",
+    "static/js/2.726ca5c0.chunk.js": "/aviasales/static/js/2.726ca5c0.chunk.js",
+    "static/js/2.726ca5c0.chunk.js.map": "/aviasales/static/js/2.726ca5c0.chunk.js.map",
+    "index.html": "/aviasales/index.html",
+    "static/css/main.7fc1c09a.chunk.css.map": "/aviasales/static/css/main.7fc1c09a.chunk.css.map",
+    "static/js/2.726ca5c0.chunk.js.LICENSE.txt": "/aviasales/static/js/2.726ca5c0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c621a0eb.js",
-    "static/js/2.7356ac0d.chunk.js",
+    "static/js/runtime-main.57faaa61.js",
+    "static/js/2.726ca5c0.chunk.js",
     "static/css/main.7fc1c09a.chunk.css",
-    "static/js/main.825ed684.chunk.js"
+    "static/js/main.6656c36b.chunk.js"
   ]
 }
