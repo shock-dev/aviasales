@@ -1,8 +1,8 @@
 {
-  "name": "aviasales-react-typescript",
+  "name": "aviasales",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://shock-dev.github.io/aviasales-react-typescript",
+  "homepage": "https://shock-dev.github.io/aviasales",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
