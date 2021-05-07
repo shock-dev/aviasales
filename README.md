@@ -5,6 +5,10 @@
   <img src="https://img.shields.io/badge/license-MIT-blue.svg">
 </p>
 
+# Overview
+
+<img src="https://sun9-8.userapi.com/impg/z6WdbFoiI3VR02W-QJRuKe9ROEmcI2-KiCG0jw/U7AixPeZRL0.jpg?size=1382x777&quality=96&sign=f8ffd994c4f05e0aa93b9cb2f3289915&type=album" />
+
 ## The technologies I used:
 
 - [React](https://reactjs.org)
