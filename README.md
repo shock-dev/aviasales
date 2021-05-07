@@ -1,4 +1,4 @@
-# Aviasales
+# ✈ Aviasales
 
 <p align="center">
   <img src="https://github.com/shock-dev/aviasales-react-typescript/actions/workflows/deploy.yml/badge.svg">
