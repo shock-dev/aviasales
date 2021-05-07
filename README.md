@@ -15,7 +15,7 @@ yarn install
 
 ##### Start application in development mode
 ```
-yarn serve
+yarn start
 ```
 
 ##### Build for production
