@@ -2,6 +2,7 @@
 
 <p align="center">
   <img src="https://github.com/shock-dev/aviasales-react-typescript/actions/workflows/deploy.yml/badge.svg">
+  <img src="https://github.com/shock-dev/aviasales-react-typescript/actions/workflows/codestyle.yml/badge.svg">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg">
 </p>
 
