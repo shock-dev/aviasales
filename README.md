@@ -1,6 +1,9 @@
 # Aviasales
 
-![deploy](https://github.com/shock-dev/aviasales-react-typescript/actions/workflows/deploy.yml/badge.svg)
+<p align="center">
+  <img src="https://github.com/shock-dev/aviasales-react-typescript/actions/workflows/deploy.yml/badge.svg">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
+</p>
 
 ## The technologies I used:
 
