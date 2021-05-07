@@ -5,7 +5,24 @@
   <img src="https://img.shields.io/badge/license-MIT-blue.svg">
 </p>
 
-# Overview
+## Get started
+
+##### Project setup
+```
+yarn install
+```
+
+##### Start application in development mode
+```
+yarn serve
+```
+
+##### Build for production
+```
+yarn build
+```
+
+## Overview
 
 <img src="https://sun9-8.userapi.com/impg/z6WdbFoiI3VR02W-QJRuKe9ROEmcI2-KiCG0jw/U7AixPeZRL0.jpg?size=1382x777&quality=96&sign=f8ffd994c4f05e0aa93b9cb2f3289915&type=album" />
 
